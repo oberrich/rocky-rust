@@ -20,6 +20,7 @@ sudo vi /etc/ssh/sshd_config
 ```diff
 - # Port 22
 + Port 12345
+
 :wq
 ```
 ```console
