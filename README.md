@@ -62,6 +62,9 @@ port    = ssh
 sudo mv /etc/fail2ban/jail.d/00-firewalld.conf /etc/fail2ban/jail.d/00-firewalld.local
 sudo systemctl restart fail2ban
 sudo systemctl status fail2ban
+sudo cat fail2ban.log
+# Confirm fail2ban is working (new terminal tab, don't get banned)
+sudo cat fail2ban.log
 ```
 - Install Caddy
 <!-- TODO -->
