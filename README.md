@@ -113,6 +113,11 @@ public (active)
   icmp-blocks:
   rich rules:
 ```
+- [Configure Caddy](https://docs.rockylinux.org/de/guides/web/caddy/)
+```
+TODO
+dont forget to set selinux security context
+```
 
 ### Useful commands
 - `sudo netstat -tlpn| grep ssh`
