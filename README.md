@@ -54,6 +54,7 @@ sudo vi /etc/fail2ban/jail.local
 + filter  = sshd
 + maxretry= 3
 + bantime = 3600
+port    = ssh
 
 :wq
 ```
