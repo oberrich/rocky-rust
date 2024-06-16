@@ -87,8 +87,9 @@ rm -rf build sqlite sqlite.tar.gz
 ```
 - [Install Caddy](https://linuxiac.com/installing-caddy-php-on-rocky-linux-9-almalinux-9/)
 ```console
-sudo dnf install 'dnf-command(copr)'
+sudo dnf install 'dnf-command(copr)' -y
 sudo dnf copr enable @caddy/caddy -y
+sudo dnf install caddy -y
 sudo firewall-cmd --permanent --zone=public --add-service=http
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
