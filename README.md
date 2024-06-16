@@ -1,8 +1,11 @@
 # rust-stack
 ### Steps
-- Update server and change password
+- Login
 ```bash
 ssh linuxuser@host:22
+```
+- Update server and change password
+```bash
 sudo dnf install epel-release -y
 sudo dnf update -y
 sudo passwd linuxuser
@@ -23,6 +26,8 @@ sudo vi /etc/ssh/sshd_config
 sudo semanage port -a -t ssh_port_t -p tcp 12345
 sudo firewall-cmd --add-port=12345/tcp --permanent
 sudo firewall-cmd --remove-service=ssh --permanent
+sudo netstat -tlpn| grep ssh
+# Confirm SSH is still working in new terminal tab
 ```
 - Install Caddy
 <!-- TODO -->
