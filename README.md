@@ -80,7 +80,7 @@ make
 make sqlite3.c # make: 'sqlite3.c' is up to date.
 sudo mv sqlite3 /usr/bin/sqlite3
 sqlite3 --version # 3.47.0 2024-06-14 23:13:54 13242289c5d412b706f50fc7e1553032ea3a52d41a3e34e155432adaf0551481 (64-bit)
-cd ..
+cd ~
 rm -rf build sqlite sqlite.tar.gz
 ```
 - Install Caddy
