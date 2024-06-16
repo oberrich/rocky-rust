@@ -85,9 +85,10 @@ sqlite3 --version # 3.47.0 2024-06-14 23:13:54 13242289c5d412b706f50fc7e1553032e
 cd ~
 rm -rf build sqlite sqlite.tar.gz
 ```
-- Install Caddy
+- [Install Caddy](https://linuxiac.com/installing-caddy-php-on-rocky-linux-9-almalinux-9/)
 ```console
-sudo dnf install -y caddy
+sudo dnf install 'dnf-command(copr)'
+sudo dnf copr enable @caddy/caddy -y
 sudo firewall-cmd --permanent --zone=public --add-service=http
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
