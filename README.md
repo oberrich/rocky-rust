@@ -77,7 +77,7 @@ sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
 # in case that didnt work: `sudo systemctl restart firewalld`
 ```
-##### A properly configured firewall will look something [like this](https://docs.rockylinux.org/de/guides/web/caddy/)
+###### A properly configured firewall will look something [like this](https://docs.rockylinux.org/de/guides/web/caddy/)
 ```yaml
 $ sudo firewall-cmd --list-all
 public (active)
