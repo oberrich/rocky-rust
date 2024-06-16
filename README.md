@@ -114,13 +114,13 @@ public (active)
 ```
 - [Configure Caddy](https://docs.rockylinux.org/de/guides/web/caddy/)
 ```console
-cd ~
-vi Caddyfile
+sudo vi /etc/caddy/Caddyfile
 ```
 ```yaml
 domain.tld {
-    root * /usr/share/caddy/domain.tld
-    file_server
+	root * /usr/share/caddy/domain.tld
+	encode zstd gzip
+	file_server
 }
 
 :wq
@@ -133,12 +133,13 @@ sudo vi       /usr/share/caddy/domain.tld/index.html
 <html>Rocky Rust Stack (RSS)</html>
 
 :wq
+sudo chcon -R --reference=/usr/share/caddy /usr/share/caddy/domain.tld
 ```
 > [!CAUTION]
 > letsencrypt has rate limits, follow instructions on default html page for trouble shooting
 ```console
 sudo caddy run
-sudo caddy adapt # Adapts a config document to native JSON
+sudo caddy adapt
 sudo systemctl enable --now caddy
 ```
 ### Useful commands
