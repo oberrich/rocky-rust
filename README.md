@@ -93,7 +93,7 @@ sudo dnf install caddy -y # caddy-2.8.1-1.el9.x86_64
 sudo firewall-cmd --permanent --zone=public --add-service=http
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
-# in case that didn't work: `sudo systemctl restart firewalld`
+# in case that didnt work: `sudo systemctl restart firewalld`
 ```
 A properly configured firewall will look something [like this](https://docs.rockylinux.org/de/guides/web/caddy/)
 ```yaml
