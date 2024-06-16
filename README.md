@@ -16,8 +16,13 @@ sudo passwd root
 ```bash
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 sudo vi /etc/ssh/sshd_config
-  Port 12345 # change this
- :wq
+```
+```diff
+- # Port 22
++ Port 12345
+:wq
+```
+```bash
 sudo semanage port -a -t ssh_port_t -p tcp 12345
 sudo firewall-cmd --add-port=12345/tcp --permanent
 sudo firewall-cmd --remove-service=ssh --permanent
