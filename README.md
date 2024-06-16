@@ -1,12 +1,4 @@
 # rust-stack
-### Useful commands
-- `sudo netstat -tlpn| grep ssh`
-```
-tcp        0      0 0.0.0.0:22           0.0.0.0:*               LISTEN      4933/sshd: /usr/sbi
-tcp6       0      0 :::22                :::*                    LISTEN      4933/sshd: /usr/sbi
-```
-- `ssh-keygen -R host`: Generates new SSH key for a host, useful for changed host identity after server reinstall.
-
 ### Steps
 - Update server and change password
 ```bash
@@ -34,3 +26,12 @@ sudo firewall-cmd --remove-service=ssh --permanent
 ```
 - Install Caddy
 <!-- TODO -->
+
+
+### Useful commands
+- `sudo netstat -tlpn| grep ssh`
+```
+tcp        0      0 0.0.0.0:22           0.0.0.0:*               LISTEN      4933/sshd: /usr/sbi
+tcp6       0      0 :::22                :::*                    LISTEN      4933/sshd: /usr/sbi
+```
+- `ssh-keygen -R host`: Generates new SSH key for a host, useful for changed host identity after server reinstall.
