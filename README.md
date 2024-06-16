@@ -127,12 +127,17 @@ domain.tld {
 ```
 ```console
 sudo mkdir -p /usr/share/caddy/domain.tld
-sudo vi /usr/share/caddy/domain.tld/index.html
+sudo vi       /usr/share/caddy/domain.tld/index.html
 ```
 ```html
 <html>Rocky Rust Stack (RSS)</html>
 
 :wq
+```
+```console
+# Follow instructions on default page for trouble shooting
+sudo caddy run
+sudo systemctl enable --now caddy
 ```
 ### Useful commands
 - `sudo netstat -tlpn| grep ssh`
