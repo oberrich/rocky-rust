@@ -67,22 +67,6 @@ sudo systemctl status fail2ban
 # Confirm fail2ban is working (new terminal tab, dont get yourself banned)
 sudo cat /var/log/fail2ban.log
 ```
-- Build [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite) (RHEL is living in 2021 iirc)
-```console
-cd ~
-wget https://www.sqlite.org/src/tarball/sqlite.tar.gz
-tar xzf sqlite.tar.gz
-mkdir build
-cd build
-~/sqlite/configure
-make verify-source
-make
-make sqlite3.c # make: 'sqlite3.c' is up to date.
-sudo mv sqlite3 /usr/bin/sqlite3
-sqlite3 --version # 3.47.0 2024-06-14 23:13:54 13242289c5d412b706f50fc7e1553032ea3a52d41a3e34e155432adaf0551481 (64-bit)
-cd ~
-rm -rf build sqlite sqlite.tar.gz
-```
 - Install [Caddy](https://linuxiac.com/installing-caddy-php-on-rocky-linux-9-almalinux-9/)
 ```console
 sudo dnf install 'dnf-command(copr)' -y
@@ -140,6 +124,56 @@ sudo chcon -R --reference=/usr/share/caddy /usr/share/caddy/domain.tld
 sudo caddy run
 sudo caddy adapt
 sudo systemctl enable --now caddy
+```
+- Install [Rust](https://www.rust-lang.org/)
+```console
+cd ~
+sudo dnf install cmake gcc make curl clang -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+```console
+1) Proceed with standard installation (default - just press enter)
+2) Customize installation
+3) Cancel installation
+>2
+Default host triple? [x86_64-unknown-linux-gnu]
+
+Default toolchain? (stable/beta/nightly/none) [stable]
+nightly
+
+Profile (which tools and data to install)? (minimal/default/complete) [default]
+complete
+
+Modify PATH variable? (Y/n)
+Y
+
+1) Proceed with selected options (default - just press enter)
+2) Customize installation
+3) Cancel installation
+>1
+```
+```console
+. "$HOME/.cargo/env"
+rustc --version
+```
+```
+rustc 1.81.0-nightly (3cf924b93 2024-06-15)
+```
+- Build [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite) (RHEL is living in 2021 iirc)
+```console
+cd ~
+wget https://www.sqlite.org/src/tarball/sqlite.tar.gz
+tar xzf sqlite.tar.gz
+mkdir build
+cd build
+~/sqlite/configure
+make verify-source
+make
+make sqlite3.c # make: 'sqlite3.c' is up to date.
+sudo mv sqlite3 /usr/bin/sqlite3
+sqlite3 --version # 3.47.0 2024-06-14 23:13:54 13242289c5d412b706f50fc7e1553032ea3a52d41a3e34e155432adaf0551481 (64-bit)
+cd ~
+rm -rf build sqlite sqlite.tar.gz
 ```
 ### Useful commands
 - `sudo netstat -tlpn| grep ssh`
