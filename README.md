@@ -26,8 +26,8 @@ sudo vi /etc/ssh/sshd_config
 sudo semanage port -a -t ssh_port_t -p tcp 12345
 sudo firewall-cmd --add-port=12345/tcp --permanent
 sudo firewall-cmd --remove-service=ssh --permanent
-sudo netstat -tlpn| grep ssh
 # Confirm SSH is still working in new terminal tab
+sudo netstat -tlpn| grep ssh
 ```
 - Install Caddy
 <!-- TODO -->
