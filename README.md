@@ -113,11 +113,23 @@ public (active)
   rich rules:
 ```
 - [Configure Caddy](https://docs.rockylinux.org/de/guides/web/caddy/)
+```console
+cd ~
+vi Caddyfile
 ```
-TODO
-dont forget to set selinux security context
+```yaml
+domain.tld {
+    root * /usr/share/caddy/domain.tld
+    file_server
+}
 ```
-
+```console
+sudo mkdir -p /usr/share/caddy/domain.tld
+sudo vi /usr/share/caddy/domain.tld/index.html
+```
+```html
+<html>Rocky Rust Stack (RSS)</html>
+```
 ### Useful commands
 - `sudo netstat -tlpn| grep ssh`
 ```
