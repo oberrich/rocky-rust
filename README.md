@@ -7,7 +7,8 @@ ssh linuxuser@133.37.133.37:22
 - Update server and change password
 ```console
 sudo dnf install epel-release -y
-sudo dnf update -y
+sudo dnf upgrade --refresh -y
+sudo dnf update --refresh -y
 sudo passwd linuxuser
 sudo passwd root
 ```
@@ -65,6 +66,11 @@ sudo systemctl status fail2ban
 sudo cat /var/log/fail2ban.log
 # Confirm fail2ban is working (new terminal tab, dont get yourself banned)
 sudo cat /var/log/fail2ban.log
+```
+- Compile sqlite3 from source
+```console
+cd ~
+
 ```
 - Install Caddy
 <!-- TODO -->
