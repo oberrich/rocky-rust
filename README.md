@@ -1,6 +1,6 @@
 # rust-stack
 ### Prerequisites
-An internet connection, almost any machine and a fresh install of Rocky 9
+An internet connection, almost any machine and a fresh installation of Rocky 9
 ### Steps
 - Login
 ```console
