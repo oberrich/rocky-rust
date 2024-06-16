@@ -126,4 +126,6 @@ tcp6       0      0 :::22                :::*                    LISTEN      493
 ```
 - `ssh-keygen -R 133.37.133.37` Generates new SSH key for a host, useful for changed host identity after server reinstall
 - `curl -4 icanhazip.com` 133.37.133.37
-- `stat folder` for SELinux security context and permissions
+- `stat folder` SELinux security context and permissions
+- `sudo chcon -R --reference=/path/from /path/fo` copy permissions (and security context)
+- `sudo kill 1337`
