@@ -89,7 +89,7 @@ rm -rf build sqlite sqlite.tar.gz
 ```console
 sudo dnf install 'dnf-command(copr)' -y
 sudo dnf copr enable @caddy/caddy -y
-sudo dnf install caddy -y
+sudo dnf install caddy -y # caddy-2.8.1-1.el9.x86_64
 sudo firewall-cmd --permanent --zone=public --add-service=http
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
