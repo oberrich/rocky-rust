@@ -6,7 +6,7 @@ An internet connection, almost any machine and a fresh installation of Rocky 9
 ```console
 ssh linuxuser@133.37.133.37:22
 ```
-##### Update server and change password
+##### Update server and change passwords
 ```console
 sudo dnf install epel-release -y
 sudo dnf upgrade --refresh -y
