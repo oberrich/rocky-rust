@@ -2,7 +2,7 @@
 ### Steps
 - Login
 ```console
-ssh linuxuser@host:22
+ssh linuxuser@133.37.133.37:22
 ```
 - Update server and change password
 ```console
