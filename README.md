@@ -86,8 +86,31 @@ cd ~
 rm -rf build sqlite sqlite.tar.gz
 ```
 - Install Caddy
-<!-- TODO -->
-
+```console
+sudo dnf install -y caddy
+sudo firewall-cmd --permanent --zone=public --add-service=http
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+# in case that didn't work: `sudo systemctl restart firewalld`
+```
+A properly configured firewall will look something [like this](https://docs.rockylinux.org/de/guides/web/caddy/)
+```yaml
+$ sudo firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp1s0
+  sources:
+  services: cockpit dhcpv6-client http https
+  ports: 12345/tcp # Our new SSH port
+  protocols:
+  forward: yes
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+```
 
 ### Useful commands
 - `sudo netstat -tlpn| grep ssh`
