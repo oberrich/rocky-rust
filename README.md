@@ -127,7 +127,6 @@ sudo systemctl enable --now caddy
 ```
 ### Install [Rust](https://www.rust-lang.org/)
 ```console
-cd ~
 sudo dnf install cmake gcc make curl clang -y
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
