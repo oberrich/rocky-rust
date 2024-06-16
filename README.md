@@ -26,6 +26,8 @@ sudo vi /etc/ssh/sshd_config
 sudo semanage port -a -t ssh_port_t -p tcp 12345
 sudo firewall-cmd --add-port=12345/tcp --permanent
 sudo firewall-cmd --remove-service=ssh --permanent
+sudo systemctl restart sshd
+sudo systemctl restart firewall-cmd
 # Confirm SSH is still working in new terminal tab
 sudo netstat -tlpn| grep ssh
 ```
@@ -41,10 +43,23 @@ sudo vi /etc/fail2ban/jail.local
 + bantime = 1h
 - # findtime = 10m
 + findtime = 1h
+
+[sshd]
+# To use more aggressive sshd modes set filter parameter "mode" in jail.local:
+# normal (default), ddos, extra or aggressive (combines all).
+# See "tests/files/logs/sshd" or "filter.d/sshd.conf" for usage example and details.
+#mode   = normal
++ enabled = true
++ filter  = sshd
++ maxretry= 3
++ bantime = 3600
+
 :wq
 ```
 ```console
 sudo mv /etc/fail2ban/jail.d/00-firewalld.conf /etc/fail2ban/jail.d/00-firewalld.local
+sudo systemctl restart fail2ban
+sudo systemctl status fail2ban
 ```
 - Install Caddy
 <!-- TODO -->
