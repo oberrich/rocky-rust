@@ -73,3 +73,4 @@ tcp        0      0 0.0.0.0:22           0.0.0.0:*               LISTEN      493
 tcp6       0      0 :::22                :::*                    LISTEN      4933/sshd: /usr/sbi
 ```
 - `ssh-keygen -R host` Generates new SSH key for a host, useful for changed host identity after server reinstall
+- `curl -4 icanhazip.com` `133.37.133.37`
