@@ -116,7 +116,7 @@ public (active)
 ```console
 sudo vi /etc/caddy/Caddyfile
 ```
-```yaml
+```
 domain.tld {
 	root * /usr/share/caddy/domain.tld
 	encode zstd gzip
