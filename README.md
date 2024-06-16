@@ -122,6 +122,8 @@ domain.tld {
     root * /usr/share/caddy/domain.tld
     file_server
 }
+
+:wq
 ```
 ```console
 sudo mkdir -p /usr/share/caddy/domain.tld
@@ -129,6 +131,8 @@ sudo vi /usr/share/caddy/domain.tld/index.html
 ```
 ```html
 <html>Rocky Rust Stack (RSS)</html>
+
+:wq
 ```
 ### Useful commands
 - `sudo netstat -tlpn| grep ssh`
