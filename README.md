@@ -29,6 +29,19 @@ sudo firewall-cmd --remove-service=ssh --permanent
 # Confirm SSH is still working in new terminal tab
 sudo netstat -tlpn| grep ssh
 ```
+- Install fail2ban
+```bash
+sudo dnf install fail2ban -y
+sudo systemctl enable --now fail2ban
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo vi /etc/fail2ban/jail.local
+```
+```diff
+- # bantime = 10m
++ bantime = 1h
+<!-- TODO -->
+:wq
+```
 - Install Caddy
 <!-- TODO -->
 
