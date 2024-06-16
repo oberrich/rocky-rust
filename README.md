@@ -14,7 +14,6 @@ sudo dnf update --refresh -y
 sudo passwd linuxuser
 sudo passwd root
 ```
-<!-- TODO -->
 - Change SSH port
 ```console
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
