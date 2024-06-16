@@ -1,12 +1,12 @@
 # Rocky Rust Stack (RSS)
-### Prerequisites
+## Prerequisites
 An internet connection, almost any machine and a fresh installation of Rocky 9
-### Steps
-##### Login
+## Steps
+### Login
 ```console
 ssh linuxuser@133.37.133.37:22
 ```
-##### Update server and change passwords
+### Update server and change passwords
 ```console
 sudo dnf install epel-release -y
 sudo dnf upgrade --refresh -y
@@ -14,7 +14,7 @@ sudo dnf update --refresh -y
 sudo passwd linuxuser
 sudo passwd root
 ```
-##### Change SSH port
+### Change SSH port
 ```console
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 sudo vi /etc/ssh/sshd_config
@@ -34,7 +34,7 @@ sudo systemctl restart firewall-cmd
 # Confirm SSH is still working in new terminal tab
 sudo netstat -tlpn| grep ssh
 ```
-##### Install fail2ban
+### Install fail2ban
 ```console
 sudo dnf install fail2ban -y
 sudo systemctl enable --now fail2ban
@@ -67,7 +67,7 @@ sudo systemctl status fail2ban
 # Confirm fail2ban is working (new terminal tab, dont get yourself banned)
 sudo cat /var/log/fail2ban.log
 ```
-##### Install [Caddy](https://linuxiac.com/installing-caddy-php-on-rocky-linux-9-almalinux-9/)
+### Install [Caddy](https://linuxiac.com/installing-caddy-php-on-rocky-linux-9-almalinux-9/)
 ```console
 sudo dnf install 'dnf-command(copr)' -y
 sudo dnf copr enable @caddy/caddy -y
@@ -77,7 +77,7 @@ sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
 # in case that didnt work: `sudo systemctl restart firewalld`
 ```
-###### A properly configured firewall will look something [like this](https://docs.rockylinux.org/de/guides/web/caddy/)
+#### A properly configured firewall will look something [like this](https://docs.rockylinux.org/de/guides/web/caddy/)
 ```yaml
 $ sudo firewall-cmd --list-all
 public (active)
@@ -95,7 +95,7 @@ public (active)
   icmp-blocks:
   rich rules:
 ```
-##### Configure [Caddy](https://docs.rockylinux.org/de/guides/web/caddy/)
+### Configure [Caddy](https://docs.rockylinux.org/de/guides/web/caddy/)
 ```console
 sudo vi /etc/caddy/Caddyfile
 ```
@@ -125,7 +125,7 @@ sudo caddy run
 sudo caddy adapt
 sudo systemctl enable --now caddy
 ```
-##### Install [Rust](https://www.rust-lang.org/)
+### Install [Rust](https://www.rust-lang.org/)
 ```console
 cd ~
 sudo dnf install cmake gcc make curl clang -y
@@ -159,7 +159,7 @@ rustc --version
 ```
 rustc 1.81.0-nightly (3cf924b93 2024-06-15)
 ```
-##### Build [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite) (RHEL is living in 2021 iirc)
+### Build [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite) (RHEL is living in 2021 iirc)
 ```console
 cd ~
 wget https://www.sqlite.org/src/tarball/sqlite.tar.gz
@@ -175,7 +175,7 @@ sqlite3 --version # 3.47.0 2024-06-14 23:13:54 13242289c5d412b706f50fc7e1553032e
 cd ~
 rm -rf build sqlite sqlite.tar.gz
 ```
-#### Useful commands
+## Useful commands
 - `sudo netstat -tlpn| grep ssh`
 ```
 tcp        0      0 0.0.0.0:22           0.0.0.0:*               LISTEN      4933/sshd: /usr/sbi
