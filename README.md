@@ -125,5 +125,5 @@ dont forget to set selinux security context
 tcp        0      0 0.0.0.0:22           0.0.0.0:*               LISTEN      4933/sshd: /usr/sbi
 tcp6       0      0 :::22                :::*                    LISTEN      4933/sshd: /usr/sbi
 ```
-- `ssh-keygen -R host` Generates new SSH key for a host, useful for changed host identity after server reinstall
+- `ssh-keygen -R 133.37.133.37` Generates new SSH key for a host, useful for changed host identity after server reinstall
 - `curl -4 icanhazip.com` 133.37.133.37
