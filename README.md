@@ -69,7 +69,7 @@ sudo cat /var/log/fail2ban.log
 # Confirm fail2ban is working (new terminal tab, dont get yourself banned)
 sudo cat /var/log/fail2ban.log
 ```
-- Compile sqlite3 from source (RHEL is living in 2021 iirc)
+- Compile [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite) (RHEL is living in 2021 iirc)
 ```console
 cd ~
 wget https://www.sqlite.org/src/tarball/sqlite.tar.gz
@@ -85,7 +85,7 @@ sqlite3 --version # 3.47.0 2024-06-14 23:13:54 13242289c5d412b706f50fc7e1553032e
 cd ~
 rm -rf build sqlite sqlite.tar.gz
 ```
-- [Install Caddy](https://linuxiac.com/installing-caddy-php-on-rocky-linux-9-almalinux-9/)
+- Install [Caddy](https://linuxiac.com/installing-caddy-php-on-rocky-linux-9-almalinux-9/)
 ```console
 sudo dnf install 'dnf-command(copr)' -y
 sudo dnf copr enable @caddy/caddy -y
