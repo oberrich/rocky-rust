@@ -134,8 +134,9 @@ sudo vi       /usr/share/caddy/domain.tld/index.html
 
 :wq
 ```
+> [!CAUTION]
+> letsencrypt has rate limits, follow instructions on default html page for trouble shooting
 ```console
-# Follow instructions on default page for trouble shooting
 sudo caddy run
 sudo systemctl enable --now caddy
 ```
