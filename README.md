@@ -74,7 +74,7 @@ wget https://www.sqlite.org/src/tarball/sqlite.tar.gz
 tar xzf sqlite.tar.gz
 mkdir build
 cd build
-../sqlite/configure
+~/sqlite/configure
 make verify-source
 make
 make sqlite3.c # make: 'sqlite3.c' is up to date.
