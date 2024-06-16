@@ -133,11 +133,11 @@ sudo vi       /usr/share/caddy/domain.tld/index.html
 <html>Rocky Rust Stack (RSS)</html>
 
 :wq
-sudo chcon -R --reference=/usr/share/caddy /usr/share/caddy/domain.tld
 ```
 > [!CAUTION]
 > letsencrypt has rate limits, follow instructions on default html page for trouble shooting
 ```console
+sudo chcon -R --reference=/usr/share/caddy /usr/share/caddy/domain.tld
 sudo caddy run
 sudo caddy adapt
 sudo systemctl enable --now caddy
