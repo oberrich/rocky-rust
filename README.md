@@ -1,4 +1,4 @@
-# rust-stack
+# Rocky Rust Stack (RSS)
 ### Prerequisites
 An internet connection, almost any machine and a fresh installation of Rocky 9
 ### Steps
@@ -69,7 +69,7 @@ sudo cat /var/log/fail2ban.log
 # Confirm fail2ban is working (new terminal tab, dont get yourself banned)
 sudo cat /var/log/fail2ban.log
 ```
-- Compile [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite) (RHEL is living in 2021 iirc)
+- Build [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite) (RHEL is living in 2021 iirc)
 ```console
 cd ~
 wget https://www.sqlite.org/src/tarball/sqlite.tar.gz
