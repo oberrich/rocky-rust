@@ -158,7 +158,7 @@ rustc --version
 ```
 rustc 1.81.0-nightly (3cf924b93 2024-06-15)
 ```
-### Build [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite) (RHEL is living in 2021 iirc)
+### Build [sqlite3](https://www.sqlite.org/index.html) from [source](https://github.com/sqlite/sqlite)
 ```console
 cd ~
 wget https://www.sqlite.org/src/tarball/sqlite.tar.gz
@@ -174,6 +174,7 @@ sqlite3 --version # 3.47.0 2024-06-14 23:13:54 13242289c5d412b706f50fc7e1553032e
 cd ~
 rm -rf build sqlite sqlite.tar.gz
 ```
+###### RHEL repo had a version from 2021
 ## Useful commands
 - `sudo netstat -tlpn| grep ssh`
 ```
